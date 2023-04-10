@@ -9,39 +9,56 @@
 <body>
     <h1>電資一實 121170914  黎源璋</h1>
     <div class="box"></div>
+     <img src="anh2.jpg" alt="Image 2" class="box1">
     <button>點我切換顏色</button>
 </body>
 <style>
     .box {
-        width: 100px;
-        height: 100px;
-        background-color: blue;
-        transition: background-color 1s ease;
-    }
+  width: 100px;
+  height: 100px;
+  background-color: blue;
+  transition: background-color 1s ease;
+}
 
-    .box.change-color {
-        background-color: red;
-    }
+.box.change-color {
+  background-color: red;
+}.box {
+  width: 100px;
+  height: 100px;
+  background-color: blue;
+  animation: rotate 2s ease-in-out infinite;
+}
 
-    .box {
-        width: 100px;
-        height: 100px;
-        background-color: blue;
-        position: relative;
-        animation: slide 2s ease-in-out infinite;
-    }
+@keyframes rotate {
+  0% {
+    transform: rotate(0deg);
+  }
+  50% {
+    transform: rotate(180deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
 
-    @keyframes slide {
-        0% {
-            left: 0;
-        }
-        50% {
-            left: 50%;
-        }
-        100% {
-            left: 100%;
-        }
-    }
+.box1 {
+  width: 100px;
+  height: 100px;
+  background-color: blue;
+  animation: bounce 0.5s ease-in-out infinite;
+}
+
+@keyframes bounce {
+  0% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-20px);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
 </style>
 <script>
     const box = document.querySelector('.box');
